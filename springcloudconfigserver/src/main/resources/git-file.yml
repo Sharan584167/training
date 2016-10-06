@@ -1,0 +1,26 @@
+---
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+
+---
+# Items that apply to ALL profiles:
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka/,http://localhost:8011/eureka/,http://localhost:8012/eureka/,http://localhost:8013/eureka/
+
+---
+newConfig:
+ data: Hi All New Message From Pradeep
+
+---
+ 
+spring:
+ cloud: 
+  stream: 
+   bindings: 
+    inventoryQ:
+     destination: inventoryQ

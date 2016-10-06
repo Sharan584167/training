@@ -1,0 +1,30 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8001
+ 
+server:
+  port: ${PORT:${SERVER_PORT:0}}
+
+applications: consulhystrixclient        
+---   
+
+spring:
+  cloud:
+    consul:
+      discovery:
+        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+        health-check-interval: 10s
+        
+        
+  application: 
+    name: manufacturercb-microservice
+     
+      
+turbine:
+  app-config: ${applications}
+  cluster-name-expression: ${applications}  
+---
+           
+#server:
+ # port: 0

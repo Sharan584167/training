@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8001
+
+        
+  application: 
+    name: hystrix-microservice
+
+server:
+  port: 5555
